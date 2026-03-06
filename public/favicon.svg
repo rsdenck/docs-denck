@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="faviconGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00DC82;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34F5C5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="32" height="32" fill="#0B0F10"/>
+  
+  <!-- Simplified cube for favicon -->
+  <g transform="translate(16,16)">
+    <!-- Top face -->
+    <polygon points="-6,-6 0,-9 6,-6 0,-3" 
+             fill="url(#faviconGreen)" 
+             stroke="url(#faviconGreen)" 
+             stroke-width="0.5"/>
+    
+    <!-- Left face -->
+    <polygon points="-6,-6 -6,6 0,9 0,-3" 
+             fill="rgba(0,220,130,0.7)" 
+             stroke="url(#faviconGreen)" 
+             stroke-width="0.5"/>
+    
+    <!-- Right face -->
+    <polygon points="0,-3 6,-6 6,6 0,9" 
+             fill="rgba(0,220,130,0.5)" 
+             stroke="url(#faviconGreen)" 
+             stroke-width="0.5"/>
+  </g>
+</svg>

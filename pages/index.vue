@@ -1,9 +1,12 @@
 <template>
   <div class="min-h-screen flex flex-col items-center justify-center px-4">
     <div class="text-center space-y-8 max-w-4xl">
-      <h1 class="text-6xl font-bold neon-green">
-        Ranlens Denck
-      </h1>
+      <div class="flex flex-col items-center gap-6">
+        <img src="/logo.svg" alt="Docs Denck Logo" class="w-24 h-24 animate-pulse" />
+        <h1 class="text-6xl font-bold neon-green">
+          Ranlens Denck
+        </h1>
+      </div>
       <p class="text-2xl text-gray-400">
         Seja Bem Vindo!
       </p>

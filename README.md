@@ -1,6 +1,7 @@
 # Docs Denck
 
 <div align="center">
+  <img src="./public/logo.svg" alt="Docs Denck Logo" width="100" height="100">
   <h1 style="color: #00DC82; text-shadow: 0 0 10px #00DC82;">Docs Denck</h1>
   <p style="color: #6B7280;">Plataforma de Documentação Técnica Minimalista</p>
   

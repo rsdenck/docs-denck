@@ -5,6 +5,22 @@ export default defineNuxtConfig({
   
   css: ['~/assets/css/main.css'],
   
+  app: {
+    head: {
+      title: 'Docs Denck - Ranlens Denck',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'description', content: 'Plataforma de documentação técnica minimalista' },
+        { name: 'theme-color', content: '#00DC82' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'icon', type: 'image/png', href: '/logo.svg' }
+      ]
+    }
+  },
+  
   postcss: {
     plugins: {
       tailwindcss: {},

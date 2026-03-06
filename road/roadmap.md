@@ -1,6 +1,7 @@
 # Roadmap - Docs Denck
 
 <div align="center">
+  <img src="../public/logo.svg" alt="Docs Denck Logo" width="80" height="80">
   <h1 style="color: #00DC82; text-shadow: 0 0 10px #00DC82;">Docs Denck</h1>
   <p style="color: #6B7280;">Roadmap de desenvolvimento da plataforma</p>
 </div>

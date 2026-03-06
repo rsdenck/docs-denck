@@ -1,0 +1,52 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neonGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00DC82;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#34F5C5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00FF94;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer hexagon -->
+  <polygon points="100,20 170,60 170,140 100,180 30,140 30,60" 
+           fill="none" 
+           stroke="url(#neonGreen)" 
+           stroke-width="2" 
+           filter="url(#glow)"/>
+  
+  <!-- Middle hexagon -->
+  <polygon points="100,40 150,70 150,130 100,160 50,130 50,70" 
+           fill="none" 
+           stroke="url(#neonGreen)" 
+           stroke-width="2" 
+           filter="url(#glow)"/>
+  
+  <!-- Inner hexagon -->
+  <polygon points="100,60 130,80 130,120 100,140 70,120 70,80" 
+           fill="none" 
+           stroke="url(#neonGreen)" 
+           stroke-width="2" 
+           filter="url(#glow)"/>
+  
+  <!-- Center hexagon -->
+  <polygon points="100,80 115,90 115,110 100,120 85,110 85,90" 
+           fill="url(#neonGreen)" 
+           stroke="url(#neonGreen)" 
+           stroke-width="1" 
+           filter="url(#glow)"/>
+  
+  <!-- Connecting lines -->
+  <line x1="100" y1="20" x2="100" y2="80" stroke="url(#neonGreen)" stroke-width="1" filter="url(#glow)"/>
+  <line x1="170" y1="60" x2="115" y2="90" stroke="url(#neonGreen)" stroke-width="1" filter="url(#glow)"/>
+  <line x1="170" y1="140" x2="115" y2="110" stroke="url(#neonGreen)" stroke-width="1" filter="url(#glow)"/>
+  <line x1="100" y1="180" x2="100" y2="120" stroke="url(#neonGreen)" stroke-width="1" filter="url(#glow)"/>
+  <line x1="30" y1="140" x2="85" y2="110" stroke="url(#neonGreen)" stroke-width="1" filter="url(#glow)"/>
+  <line x1="30" y1="60" x2="85" y2="90" stroke="url(#neonGreen)" stroke-width="1" filter="url(#glow)"/>
+</svg>

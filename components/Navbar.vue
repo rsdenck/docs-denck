@@ -18,8 +18,9 @@ const isAuthenticated = computed(() => {
   <nav class="border-b border-gray-800 bg-gray-900/50 backdrop-blur-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between h-16">
-        <NuxtLink to="/" class="text-xl font-bold neon-green">
-          Ranlens Denck
+        <NuxtLink to="/" class="flex items-center gap-3">
+          <img src="/logo.svg" alt="Docs Denck Logo" class="w-8 h-8" />
+          <span class="text-xl font-bold neon-green">Ranlens Denck</span>
         </NuxtLink>
 
         <div class="hidden md:flex items-center gap-6">
