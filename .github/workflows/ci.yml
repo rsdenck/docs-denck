@@ -1,0 +1,98 @@
+name: 🔍 CI Pipeline
+
+on:
+  push:
+    branches: [dev, test, build]
+  pull_request:
+    branches: [main, dev]
+
+jobs:
+  lint:
+    name: 🧹 Lint & Format
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🧹 Run Linter
+        run: npm run lint --if-present
+        
+      - name: 🎨 Check Formatting
+        run: npm run format:check --if-present
+
+  test:
+    name: 🧪 Run Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🧪 Run Unit Tests
+        run: npm run test --if-present
+        
+      - name: 📊 Upload Coverage
+        uses: codecov/codecov-action@v3
+        if: success()
+
+  build:
+    name: 🏗️ Build Application
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🏗️ Build for Production
+        run: npm run build
+        
+      - name: 📤 Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-files
+          path: .output/
+          retention-days: 7
+
+  security:
+    name: 🔒 Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: 🔍 Run Security Audit
+        run: npm audit --audit-level=high
+        
+      - name: 🛡️ Dependency Check
+        uses: actions/dependency-review-action@v3
+        if: github.event_name == 'pull_request'
