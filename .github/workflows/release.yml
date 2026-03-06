@@ -1,4 +1,4 @@
-name: 🏷️ Release & Tag
+name: Release & Tag
 
 on:
   push:
@@ -10,35 +10,40 @@ on:
 
 jobs:
   release:
-    name: 🚀 Create Release
+    name: Create Release
     runs-on: ubuntu-latest
     
     steps:
-      - name: 📥 Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           
-      - name: 🟢 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
           
-      - name: 📦 Install Dependencies
-        run: npm ci
+      - name: Install Dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
         
-      - name: 🏗️ Build Application
+      - name: Build Application
         run: npm run build
         
-      - name: 📋 Generate Changelog
+      - name: Generate Changelog
         id: changelog
         run: |
           echo "CHANGELOG<<EOF" >> $GITHUB_OUTPUT
-          git log --pretty=format:"- %s (%h)" $(git describe --tags --abbrev=0)..HEAD >> $GITHUB_OUTPUT
+          git log --pretty=format:"- %s (%h)" $(git describe --tags --abbrev=0 2>/dev/null || echo "HEAD~10")..HEAD >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         
-      - name: 🏷️ Create Tag
+      - name: Create Tag
         id: tag
         run: |
           VERSION=$(date +'%Y.%m.%d')-$(git rev-parse --short HEAD)
@@ -46,24 +51,24 @@ jobs:
           git tag $VERSION
           git push origin $VERSION
           
-      - name: 📦 Create Pre-Release
+      - name: Create Pre-Release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.tag.outputs.VERSION }}
-          release_name: 🚀 Release ${{ steps.tag.outputs.VERSION }}
+          release_name: Release ${{ steps.tag.outputs.VERSION }}
           body: |
-            ## 📋 Changelog
+            ## Changelog
             ${{ steps.changelog.outputs.CHANGELOG }}
             
-            ## 🛠️ Stack
+            ## Stack
             - Nuxt 3.21.1
             - Nuxt UI 2.18.4
             - TailwindCSS
             - Node.js 20+
             
-            ## 📥 Installation
+            ## Installation
             ```bash
             git clone https://github.com/rsdenck/docs-denck.git
             cd docs-denck
@@ -74,19 +79,20 @@ jobs:
           prerelease: true
 
   notify:
-    name: 📢 Notify Release
+    name: Notify Release
     runs-on: ubuntu-latest
     needs: release
+    if: always()
     
     steps:
-      - name: 📢 Discord Notification
+      - name: Discord Notification
         uses: Ilshidur/action-discord@master
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
           args: |
-            🚀 **Nova versão do Docs Denck foi lançada!**
+            Nova versão do Docs Denck foi lançada!
             
-            📦 **Versão:** ${{ needs.release.outputs.VERSION }}
-            🔗 **GitHub:** https://github.com/rsdenck/docs-denck
-            ✨ **Deploy:** Automático em produção
+            Versão: ${{ needs.release.outputs.VERSION }}
+            GitHub: https://github.com/rsdenck/docs-denck
+            Deploy: Automático em produção

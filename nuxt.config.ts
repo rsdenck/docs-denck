@@ -26,10 +26,9 @@ export default defineNuxtConfig({
     adminUser: process.env.ADMIN_USER || 'admin',
     adminPass: process.env.ADMIN_PASS || 'admin123',
     jwtSecret: process.env.JWT_SECRET || 'secret-key-change-in-production',
-    googleClientId: process.env.GOOGLE_CLIENT_ID || '',
-    googleClientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
-    googleRedirectUri: process.env.GOOGLE_REDIRECT_URI || 'http://localhost:8080/api/auth/callback',
-    goBackendUrl: process.env.GO_BACKEND_URL || 'http://localhost:8000'
+    githubClientId: process.env.GITHUB_CLIENT_ID || '',
+    githubClientSecret: process.env.GITHUB_CLIENT_SECRET || '',
+    githubRedirectUri: process.env.GITHUB_REDIRECT_URI || 'http://localhost:8080/api/auth/callback'
   },
   
   compatibilityDate: '2024-11-01'

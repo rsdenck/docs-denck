@@ -1,4 +1,4 @@
-# 🗺️ Roadmap - Docs Denck
+# Roadmap - Docs Denck
 
 <div align="center">
   <h1 style="color: #00DC82; text-shadow: 0 0 10px #00DC82;">Docs Denck</h1>
@@ -7,26 +7,26 @@
 
 ---
 
-## 📋 Visão Geral
+## Visão Geral
 
 Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Docs Denck**, uma solução moderna de documentação técnica construída com Nuxt 3.
 
 ---
 
-## 🎯 Objetivos Principais
+## Objetivos Principais
 
-- ✅ **Plataforma Base**: Interface minimalista com tema verde neon
-- ✅ **Sistema de Documentação**: Múltiplos templates (docs, lab, knowledge, cheatsheet)
-- 🔄 **Autenticação Google**: Login via OAuth2 com backend Go
-- 🔄 **Deploy Automatizado**: CI/CD completo com GitHub Actions
-- 📋 **Monitoramento**: Logs e métricas de uso
-- 📋 **Performance**: Otimizações e cache
+- **Plataforma Base**: Interface minimalista com tema verde neon
+- **Sistema de Documentação**: Múltiplos templates (docs, lab, knowledge, cheatsheet)
+- **Autenticação GitHub**: Login via OAuth2 com controle de acesso
+- **Deploy Automatizado**: CI/CD completo com GitHub Actions
+- **Monitoramento**: Logs e métricas de uso
+- **Performance**: Otimizações e cache
 
 ---
 
-## 🚀 Fases de Desenvolvimento
+## Fases de Desenvolvimento
 
-### **Fase 1: Fundação** ✅ *Concluída*
+### **Fase 1: Fundação** - *Concluída*
 - [x] Setup inicial do projeto Nuxt 3
 - [x] Configuração Nuxt UI + TailwindCSS
 - [x] Sistema de templates de documentação
@@ -34,29 +34,29 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 - [x] Estrutura de conteúdo em Markdown
 - [x] Navegação e sidebar dinâmica
 
-### **Fase 2: Autenticação** 🔄 *Em Progresso*
-- [ ] Backend em Go para autenticação
-- [ ] Integração OAuth2 Google
+### **Fase 2: Autenticação** - *Em Progresso*
+- [x] Estrutura OAuth2 GitHub preparada
+- [ ] Integração completa OAuth2 GitHub
 - [ ] Sistema de sessões persistentes
 - [ ] Middleware de autorização
 - [ ] Dashboard de usuário
 
-### **Fase 3: DevOps & Deploy** 🔄 *Em Progresso*
+### **Fase 3: DevOps & Deploy** - *Em Progresso*
 - [x] Configuração Git com LF (Linux)
 - [x] Estrutura de branches (main, dev, build, test, sec)
-- [ ] GitHub Actions para CI/CD
+- [x] GitHub Actions para CI/CD
 - [ ] Deploy automatizado em servidor Linux
 - [ ] Versionamento automático com tags
 - [ ] Pre-releases automatizadas
 
-### **Fase 4: Conteúdo & Features** 📋 *Planejada*
+### **Fase 4: Conteúdo & Features** - *Planejada*
 - [ ] Expansão da base de conhecimento
 - [ ] Sistema de busca avançada
 - [ ] Comentários em documentos
 - [ ] Histórico de versões
 - [ ] Export para PDF
 
-### **Fase 5: Performance & Monitoramento** 📋 *Planejada*
+### **Fase 5: Performance & Monitoramento** - *Planejada*
 - [ ] Otimização de performance
 - [ ] Sistema de cache Redis
 - [ ] Monitoramento com Prometheus
@@ -65,7 +65,7 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 
 ---
 
-## 🛠️ Stack Tecnológica
+## Stack Tecnológica
 
 ### **Frontend**
 - **Nuxt 3**: Framework Vue.js full-stack
@@ -73,10 +73,10 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 - **TailwindCSS**: Framework CSS utilitário
 - **Nuxt Content**: Sistema de CMS baseado em Markdown
 
-### **Backend** *(Planejado)*
-- **Go (Golang)**: API REST para autenticação
-- **PostgreSQL**: Banco de dados principal
-- **Redis**: Cache e sessões
+### **Backend**
+- **Express.js**: API REST para autenticação
+- **Axios**: Cliente HTTP para integrações
+- **GitHub OAuth**: Sistema de autenticação
 - **JWT**: Tokens de autenticação
 
 ### **DevOps**
@@ -87,19 +87,19 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 
 ---
 
-## 📅 Timeline
+## Timeline
 
 | Período | Fase | Status |
 |---------|------|--------|
-| **Março 2026** | Fase 1 - Fundação | ✅ Concluída |
-| **Março 2026** | Fase 2 - Autenticação | 🔄 Em Progresso |
-| **Abril 2026** | Fase 3 - DevOps | 🔄 Em Progresso |
-| **Maio 2026** | Fase 4 - Conteúdo | 📋 Planejada |
-| **Junho 2026** | Fase 5 - Performance | 📋 Planejada |
+| **Março 2026** | Fase 1 - Fundação | Concluída |
+| **Março 2026** | Fase 2 - Autenticação | Em Progresso |
+| **Abril 2026** | Fase 3 - DevOps | Em Progresso |
+| **Maio 2026** | Fase 4 - Conteúdo | Planejada |
+| **Junho 2026** | Fase 5 - Performance | Planejada |
 
 ---
 
-## 🎨 Design System
+## Design System
 
 ### **Cores Principais**
 ```css
@@ -117,7 +117,7 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 
 ---
 
-## 🔧 Configurações Técnicas
+## Configurações Técnicas
 
 ### **Ambiente de Desenvolvimento**
 - Node.js 20+
@@ -132,7 +132,7 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 
 ---
 
-## 📊 Métricas de Sucesso
+## Métricas de Sucesso
 
 - **Performance**: Lighthouse score > 90
 - **SEO**: Core Web Vitals otimizados
@@ -142,7 +142,7 @@ Este roadmap define as etapas de desenvolvimento e evolução da plataforma **Do
 
 ---
 
-## 🤝 Contribuição
+## Contribuição
 
 Este é um projeto pessoal, mas sugestões são bem-vindas:
 
@@ -154,23 +154,23 @@ Este é um projeto pessoal, mas sugestões são bem-vindas:
 
 ---
 
-## 📝 Notas de Versão
+## Notas de Versão
 
 ### **v1.0.0** - *Março 2026*
-- ✅ Plataforma base funcional
-- ✅ Sistema de templates
-- ✅ Tema visual personalizado
-- ✅ Estrutura de conteúdo
+- Plataforma base funcional
+- Sistema de templates
+- Tema visual personalizado
+- Estrutura de conteúdo
 
 ### **v1.1.0** - *Planejada*
-- 🔄 Autenticação Google
-- 🔄 Backend Go
-- 🔄 Deploy automatizado
+- Autenticação GitHub
+- Deploy automatizado
+- Sistema de busca
 
 ---
 
 <div align="center">
   <p style="color: #6B7280; margin-top: 2rem;">
-    Desenvolvido com ❤️ por <strong style="color: #00DC82;">Ranlens Denck</strong>
+    Desenvolvido com <svg width="16" height="16" fill="#00DC82" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg> por <strong style="color: #00DC82;">Ranlens Denck</strong>
   </p>
 </div>
