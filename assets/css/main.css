@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ui-primary: #00DC82;
+    --nuxt-green: #00DC82;
+    --neon-green: #00FF94;
+    --accent-green: #34F5C5;
+  }
+
+  body {
+    background-color: #0B0F10;
+    color: rgb(243 244 246);
+  }
+}
+
+@layer components {
+  .neon-green {
+    color: #00DC82;
+    text-shadow: 
+      0 0 2px #00DC82,
+      0 0 4px #00DC82,
+      0 0 8px #00DC82;
+  }
+
+  .neon-button {
+    background: #00DC82;
+    color: #04130c;
+    box-shadow: 
+      0 0 5px #00DC82,
+      0 0 10px #00DC82;
+    transition: all 0.2s ease;
+  }
+
+  .neon-button:hover {
+    box-shadow: 
+      0 0 8px #00DC82,
+      0 0 15px #00DC82,
+      0 0 25px #00DC82;
+  }
+}
+
+@layer utilities {
+  .prose {
+    max-width: none;
+  }
+
+  .prose pre {
+    background-color: rgb(17 24 39);
+    border: 1px solid rgb(31 41 55);
+  }
+
+  .prose code {
+    color: #00DC82;
+  }
+
+  .prose a {
+    color: #00DC82;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .prose a:hover {
+    color: #00FF94;
+  }
+}
